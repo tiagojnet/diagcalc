@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Avaliação de testes diagnósticos</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Avaliação de testes diagnósticos</h1>
+            <form id="inputForm">
+                <div class="grid-container">
+                    <div class="grid-header"></div>
+                    <div class="grid-header">Doença +</div>
+                    <div class="grid-header">Doença -</div>
+                    <div class="grid-label">Teste +</div>
+                    <div class="grid-item">
+                        <input
+                            type="number"
+                            id="tp"
+                            placeholder="VP"
+                            required
+                        />
+                    </div>
+                    <div class="grid-item">
+                        <input
+                            type="number"
+                            id="fp"
+                            placeholder="FP"
+                            required
+                        />
+                    </div>
+                    <div class="grid-label">Teste -</div>
+                    <div class="grid-item">
+                        <input
+                            type="number"
+                            id="fn"
+                            placeholder="FN"
+                            required
+                        />
+                    </div>
+                    <div class="grid-item">
+                        <input
+                            type="number"
+                            id="tn"
+                            placeholder="VN"
+                            required
+                        />
+                    </div>
+                </div>
+                <label for="preTestProb">Probabilidade Pré-Teste (%):</label>
+
+                <input
+                    class="preTestProb"
+                    type="number"
+                    id="preTestProb"
+                    placeholder="Probabilidade Pré-Teste"
+                    required
+                />
+
+                <button type="button" onclick="calculate()">Calcular</button>
+            </form>
+
+            <div id="results">
+                <h2 id="Resultados"></h2>
+                <p id="sensitivity"></p>
+                <p id="specificity"></p>
+                <p id="ppv"></p>
+                <p id="npv"></p>
+                <p id="lrPositive"></p>
+                <p id="lrNegative"></p>
+                <p id="postTestProbPositive"></p>
+                <p id="postTestProbNegative"></p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
