@@ -40,7 +40,7 @@ function calculate() {
 
   document.getElementById("Resultados").innerHTML = `Resultados`;
   document.getElementById("sensitivity").innerHTML =
-    `Sensibilidade: ${(sensitivity * 100).toFixed(0)}% (IC 95%: ${(sensitivityCI[0] * 100).toFixed(1)}% - ${(sensitivityCI[1] * 100).toFixed(1)}%)`;
+    `Sensibilidade: <code>${(sensitivity * 100).toFixed(0)}% (IC 95%: ${(sensitivityCI[0] * 100).toFixed(1)}% - ${(sensitivityCI[1] * 100).toFixed(1)}%)</code>`;
   document.getElementById("specificity").innerHTML =
     `Especificidade: ${(specificity * 100).toFixed(1)}% (IC 95%: ${(specificityCI[0] * 100).toFixed(1)}% - ${(specificityCI[1] * 100).toFixed(1)}%)`;
   document.getElementById("ppv").innerHTML =
@@ -48,9 +48,9 @@ function calculate() {
   document.getElementById("npv").innerHTML =
     `VPN: ${(npv * 100).toFixed(1)}% (IC 95%: ${(npvCI[0] * 100).toFixed(1)}% - ${(npvCI[1] * 100).toFixed(1)}%)`;
   document.getElementById("lrPositive").innerHTML =
-    `Rácio de Verosimilhança Positivo (LR+): ${lrPositive.toFixed(1)}`;
+    `LR+: ${lrPositive.toFixed(1)}`;
   document.getElementById("lrNegative").innerHTML =
-    `Rácio de Verosimilhança Negativo (LR-): ${lrNegative.toFixed(2)}`;
+    `LR-: ${lrNegative.toFixed(2)}`;
   document.getElementById("postTestProbPositive").innerHTML =
     `Probabilidade Pós-Teste (Resultado Positivo): ${(postTestProbPositive * 100).toFixed(1)}%`;
   document.getElementById("postTestProbNegative").innerHTML =

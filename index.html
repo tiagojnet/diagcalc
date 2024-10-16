@@ -1,80 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DIAG-CALC</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <div class="container">
-            <h1>DIAGCALC</h1>
-            <h2>Avaliação de testes diagnósticos</h2>
-            <form id="inputForm">
-                <div class="grid-container">
-                    <div class="grid-header"></div>
-                    <div class="grid-header">Doença +</div>
-                    <div class="grid-header">Doença -</div>
-                    <div class="grid-label">Teste +</div>
-                    <div class="grid-item">
-                        <input
-                            type="number"
-                            id="tp"
-                            placeholder="VP"
-                            required
-                        />
-                    </div>
-                    <div class="grid-item">
-                        <input
-                            type="number"
-                            id="fp"
-                            placeholder="FP"
-                            required
-                        />
-                    </div>
-                    <div class="grid-label">Teste -</div>
-                    <div class="grid-item">
-                        <input
-                            type="number"
-                            id="fn"
-                            placeholder="FN"
-                            required
-                        />
-                    </div>
-                    <div class="grid-item">
-                        <input
-                            type="number"
-                            id="tn"
-                            placeholder="VN"
-                            required
-                        />
-                    </div>
-                </div>
-                <label for="preTestProb">Probabilidade Pré-Teste (%):</label>
-
-                <input
-                    class="preTestProb"
-                    type="number"
-                    id="preTestProb"
-                    placeholder="Probabilidade Pré-Teste"
-                    required
-                />
-
-                <button type="button" onclick="calculate()">Calcular</button>
-            </form>
-
-            <div id="results">
-                <h2 id="Resultados"></h2>
-                <p id="sensitivity"></p>
-                <p id="specificity"></p>
-                <p id="ppv"></p>
-                <p id="npv"></p>
-                <p id="lrPositive"></p>
-                <p id="lrNegative"></p>
-                <p id="postTestProbPositive"></p>
-                <p id="postTestProbNegative"></p>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIAG-CALC</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>DIAGCALC</h1>
+      <h2>Avaliação de testes diagnósticos</h2>
+        <p>A DIAGCALC é uma calculadora de medidas de avaliação de testes diagnósticos.</p>
+            As medidas calculadas são a <b>Sensibilidade</b>, a <b>Especificidade</b>, o <b>Valor Preditivo Positivo</b>, o <b>Valor Preditivo Negativo</b> e os <b>Likelihood Ratios Positivo e Negativo (LR+ e LR-)</b>.
+            Todas as medidas são calculadas com Intervalos de Confiança a 95% (IC95%).
+        </p>
+            <p>Para utilizar, é necessário preencher a tabela com o número de Verdadeiros e Falsos Positivos (VP e FP) e de Verdadeiros e Falsos Negativos (FN e VN) e clicar em Calcular.</p>
+            Também é possível calcular a probabilidade de doença pós-teste, sendo preciso para esse cálculo preencher a probabilidade pré-teste.
+        
+        </p>
+      <form id="inputForm">
+        <div class="grid-container">
+          <div></div>
+          <div class="grid-header-pos">Doença +</div>
+          <div class="grid-header-neg">Doença -</div>
+          <div class="grid-label-pos">Teste +</div>
+          <div class="grid-item">
+            <input type="number" id="tp" placeholder="VP" required />
+          </div>
+          <div class="grid-item">
+            <input type="number" id="fp" placeholder="FP" required />
+          </div>
+          <div class="grid-label-neg">Teste -</div>
+          <div class="grid-item">
+            <input type="number" id="fn" placeholder="FN" required />
+          </div>
+          <div class="grid-item">
+            <input type="number" id="tn" placeholder="VN" required />
+          </div>
         </div>
-        <script src="script.js"></script>
-    </body>
+        <label for="preTestProb">Probabilidade Pré-Teste (%):</label>
+
+        <input
+          class="preTestProb"
+          type="number"
+          id="preTestProb"
+          placeholder="Probabilidade Pré-Teste"
+          required
+        />
+        <button type="button" onclick="calculate()">Calcular</button>
+        
+      </form>
+
+      <div id="results">
+        <h2 id="Resultados"></h2>
+        <p id="sensitivity"></p>
+        <p id="specificity"></p>
+        <p id="ppv"></p>
+        <p id="npv"></p>
+        <p id="lrPositive"></p>
+        <p id="lrNegative"></p>
+        <p id="postTestProbPositive"></p>
+        <p id="postTestProbNegative"></p>
+      </div>
+    </div>
+    <footer>
+        A DIAGCALC é uma calculadora de medidas de avaliação de testes diagnósticos criada para fins pedagógicos e de treino de estudantes de áreas formativas na saúde.</br>
+        Quaisquer análises, resultados e conclusões não são passíveis de utilização,interpretação ou generalização para além deste contexto específico.</br>
+        </br>
+        &copy; 2024 — Licença MIT - Desenvolvido por <a href="http://tiagojacinto.eu">Tiago Jacinto</a>. <a href="mailto:tiagojacinto@med.up.pt">Contacto</a>
+        
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

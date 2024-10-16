@@ -12,17 +12,23 @@ body {
         "Helvetica Neue",
         sans-serif,
         sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ccc;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+footer {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 0.8em;
 }
 
 h1,
@@ -33,25 +39,44 @@ h2 {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-.grid-header {
+.grid-header-pos {
     text-align: center;
     font-weight: bold;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #ff0000;
     color: white;
 }
 
-.grid-label {
+.grid-header-neg {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+}
+
+.grid-label-pos {
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     padding: 10px;
-    background-color: #f0f0f0;
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.grid-label-neg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+    background-color: #0056b3;
 }
 
 .grid-item {
@@ -81,6 +106,7 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    
 }
 
 button:hover {
