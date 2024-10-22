@@ -40,19 +40,21 @@ function calculate() {
 
   document.getElementById("Resultados").innerHTML = `Resultados`;
   document.getElementById("sensitivity").innerHTML =
-    `Sensibilidade: <code>${(sensitivity * 100).toFixed(0)}% (IC 95%: ${(sensitivityCI[0] * 100).toFixed(1)}% - ${(sensitivityCI[1] * 100).toFixed(1)}%)</code>`;
+    `Sensibilidade: <span class="result">${(sensitivity * 100).toFixed(0)}% <small>(IC 95%: ${(sensitivityCI[0] * 100).toFixed(1)}% - ${(sensitivityCI[1] * 100).toFixed(1)}%)</small></span>`;
   document.getElementById("specificity").innerHTML =
-    `Especificidade: ${(specificity * 100).toFixed(1)}% (IC 95%: ${(specificityCI[0] * 100).toFixed(1)}% - ${(specificityCI[1] * 100).toFixed(1)}%)`;
+    `Especificidade: <span class="result">${(specificity * 100).toFixed(1)}% <small>(IC 95%: ${(specificityCI[0] * 100).toFixed(1)}% - ${(specificityCI[1] * 100).toFixed(1)}%)</small></span>`;
   document.getElementById("ppv").innerHTML =
-    `VPP: ${(ppv * 100).toFixed(1)}% (IC 95%: ${(ppvCI[0] * 100).toFixed(1)}% - ${(ppvCI[1] * 100).toFixed(1)}%)`;
+    `VPP: <span class="result">${(ppv * 100).toFixed(1)}% <small>(IC 95%: ${(ppvCI[0] * 100).toFixed(1)}% - ${(ppvCI[1] * 100).toFixed(1)}%)</small></span>`;
   document.getElementById("npv").innerHTML =
-    `VPN: ${(npv * 100).toFixed(1)}% (IC 95%: ${(npvCI[0] * 100).toFixed(1)}% - ${(npvCI[1] * 100).toFixed(1)}%)`;
+    `VPN: <span class="result">${(npv * 100).toFixed(1)}% <small>(IC 95%: ${(npvCI[0] * 100).toFixed(1)}% - ${(npvCI[1] * 100).toFixed(1)}%)</small></span>`;
+  document.getElementById("space").innerHTML = `</br>`;
   document.getElementById("lrPositive").innerHTML =
-    `LR+: ${lrPositive.toFixed(1)}`;
+    `LR+: <span class="result">${lrPositive.toFixed(1)}</span>`;
   document.getElementById("lrNegative").innerHTML =
-    `LR-: ${lrNegative.toFixed(2)}`;
+    `LR-: <span class="result">${lrNegative.toFixed(2)}</span>`;
+  document.getElementById("space2").innerHTML = `</br>`;
   document.getElementById("postTestProbPositive").innerHTML =
-    `Probabilidade Pós-Teste (Resultado Positivo): ${(postTestProbPositive * 100).toFixed(1)}%`;
+    `Probabilidade Pós-Teste (Resultado Positivo): <span class="result">${(postTestProbPositive * 100).toFixed(1)}%</span>`;
   document.getElementById("postTestProbNegative").innerHTML =
-    `Probabilidade Pós-Teste (Resultado Negativo): ${(postTestProbNegative * 100).toFixed(1)}%`;
+    `Probabilidade Pós-Teste (Resultado Negativo): <span class="result">${(postTestProbNegative * 100).toFixed(1)}%</span>`;
 }

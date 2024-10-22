@@ -16,7 +16,7 @@
         </p>
             <p>Para utilizar, é necessário preencher a tabela com o número de Verdadeiros e Falsos Positivos (VP e FP) e de Verdadeiros e Falsos Negativos (FN e VN) e clicar em Calcular.</p>
             Também é possível calcular a probabilidade de doença pós-teste, sendo preciso para esse cálculo preencher a probabilidade pré-teste.
-        
+
         </p>
       <form id="inputForm">
         <div class="grid-container">
@@ -48,7 +48,7 @@
           required
         />
         <button type="button" onclick="calculate()">Calcular</button>
-        
+
       </form>
 
       <div id="results">
@@ -57,8 +57,10 @@
         <p id="specificity"></p>
         <p id="ppv"></p>
         <p id="npv"></p>
+        <p id="space"></p>
         <p id="lrPositive"></p>
         <p id="lrNegative"></p>
+        <p id="space2"></p>
         <p id="postTestProbPositive"></p>
         <p id="postTestProbNegative"></p>
       </div>
@@ -68,7 +70,7 @@
         Quaisquer análises, resultados e conclusões não são passíveis de utilização,interpretação ou generalização para além deste contexto específico.</br>
         </br>
         &copy; 2024 — Licença MIT - Desenvolvido por <a href="http://tiagojacinto.eu">Tiago Jacinto</a>. <a href="mailto:tiagojacinto@med.up.pt">Contacto</a>
-        
+
     </footer>
     <script src="script.js"></script>
   </body>
