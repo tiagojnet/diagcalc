@@ -1,122 +1,155 @@
 :root {
-    font-family: Inter, sans-serif;
-    font-feature-settings:
-        "liga" 1,
-        "calt" 1; /* fix for Chrome */
+  font-family: "Inter", sans-serif;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1; /* Fix for Chrome */
+  --primary-color: #ff4d4d; /* Softer red */
+  --secondary-color: #007bff; /* Brighter blue */
+  --background-color: #f8f9fa; /* Light gray */
+  --text-color: #333;
+  --white: #fff;
 }
+
 @supports (font-variation-settings: normal) {
-    :root {
-        font-family: InterVariable, sans-serif;
-    }
+  :root {
+    font-family: "InterVariable", sans-serif;
+  }
 }
 
 body {
-    font-family: Inter, sans-serif;
-    background-color: #fff;
-    margin: 0 auto;
-    padding: 0;
-    max-width: 50em;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0 auto;
+  padding: 0;
+  max-width: 50em;
+  line-height: 1.6;
 }
 
 .container {
-    padding: 1em;
-    background-color: #fff;
+  padding: 2em;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    font-size: 0.75em;
-    padding: 1.3em;
-    margin: 1em;
+  font-size: 0.85em;
+  text-align: center;
+  padding: 1.5em;
+  margin-top: 2em;
+  background-color: var(--background-color);
+  border-top: 1px solid #ddd;
 }
 
 h1,
 h2 {
-    text-align: center;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
+/* Grid Layout */
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.grid-header-pos,
+.grid-header-neg {
+  text-align: center;
+  font-weight: bold;
+  padding: 12px;
+  color: var(--white);
+  border-radius: 6px;
 }
 
 .grid-header-pos {
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #ff0000;
-    color: white;
+  background-color: var(--primary-color);
 }
 
 .grid-header-neg {
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #0056b3;
-    color: white;
+  background-color: var(--secondary-color);
+}
+
+.grid-label-pos,
+.grid-label-neg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 12px;
+  color: var(--white);
+  border-radius: 6px;
 }
 
 .grid-label-pos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    padding: 10px;
-    color: #fff;
-    background-color: #ff0000;
+  background-color: var(--primary-color);
 }
 
 .grid-label-neg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    padding: 10px;
-    color: #fff;
-    background-color: #0056b3;
+  background-color: var(--secondary-color);
 }
 
 .grid-item {
-    text-align: center;
-    padding: 10px;
+  text-align: center;
+  padding: 12px;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
-.grid-item input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px;
-    box-sizing: border-box;
+.grid-item:hover {
+  transform: scale(1.03);
 }
 
+/* Input Styling */
+.grid-item input,
 .preTestProb {
-    width: 30%;
-    padding: 10px;
-    margin: 10px;
-    box-sizing: border-box;
+  width: 85%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
 }
 
+.grid-item input:focus,
+.preTestProb:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Button Styles */
 button {
-    width: 100%;
-    background-color: #333;
-    margin-top: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    color: white;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  background-color: var(--text-color);
+  color: var(--white);
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #999;
+  background-color: var(--primary-color);
 }
 
 #results p {
-    font-size: 1.2em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .result {
-    background-color: #333;
-    color: white;
-    padding: 0.3em;
+  background-color: var(--text-color);
+  color: var(--white);
+  padding: 0.5em;
+  border-radius: 6px;
+  text-align: center;
 }
